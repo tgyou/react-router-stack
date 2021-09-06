@@ -30,8 +30,9 @@ export function StackSwitch({ children, ...props }) {
     views,
     setViews,
   };
+  const Provider = __RouterContext.Provider;
 
-  return <__RouterContext.Provider value={contextValue}>{viewChildren}</__RouterContext.Provider>;
+  return <Provider value={contextValue}>{viewChildren}</Provider>;
 }
 
 StackSwitch.defaultProps = {

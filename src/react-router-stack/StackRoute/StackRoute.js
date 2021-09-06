@@ -47,6 +47,7 @@ export function StackRoute({
 
     const _timeout = typeof timeout === 'number' ? timeout : duration + delay;
     const contextValue = { ...routerContext, match, link };
+    const Provider = __RouterContext.Provider;
 
     if (_timeout > 0) {
       contextValue.transitionProps = {
@@ -57,17 +58,17 @@ export function StackRoute({
       };
 
       return (
-        <__RouterContext.Provider value={contextValue}>
+        <Provider value={contextValue}>
           <StackAnimateRoute>
             <Component {...props} />
           </StackAnimateRoute>
-        </__RouterContext.Provider>
+        </Provider>
       );
     } else {
       return (
-        <__RouterContext.Provider value={contextValue}>
+        <Provider value={contextValue}>
           {(unmountOnExit && active) || !unmountOnExit ? <Component {...props} /> : null}
-        </__RouterContext.Provider>
+        </Provider>
       );
     }
   }
@@ -79,7 +80,9 @@ StackRoute.propTypes = {
   render: PropTypes.func,
   path: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   exact: PropTypes.bool,
+  match: PropTypes.object,
   duration: PropTypes.number,
   delay: PropTypes.number,
+  timeout: PropTypes.number,
   unmountOnExit: PropTypes.bool,
 };

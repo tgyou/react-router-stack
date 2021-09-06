@@ -12,8 +12,9 @@ function StackRouterExtend({ children, ...props }) {
 
   routerContext.history.direction = locationHistory.direction;
   const contextValue = { ...routerContext, locationHistory };
+  const Provider = __RouterContext.Provider;
 
-  return <__RouterContext.Provider value={contextValue}>{children}</__RouterContext.Provider>;
+  return <Provider value={contextValue}>{children}</Provider>;
 }
 
 export function StackRouter({ children, ...props }) {
