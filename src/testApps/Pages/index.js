@@ -22,6 +22,13 @@ function App() {
 
 export default App;
 
+// set global view component.
+viewConfig.component = ViewComponentSpring;
+
+// set global async side components.
+asyncViewComponent.LoadingComponent = AsyncLoader;
+asyncViewComponent.ErrorComponent = AsyncError;
+
 // create async component
 const Nextpage = asyncViewComponent({
   resolve: () => import('./Nextpage'),
@@ -29,10 +36,3 @@ const Nextpage = asyncViewComponent({
   // LoadingComponent: () => <Fragment>Loading...</Fragment>,
   // ErrorComponent: ({ error }) => <Fragment>{error.message}</Fragment>,
 });
-
-// set global view component.
-viewConfig.component = ViewComponentSpring;
-
-// set global async side components.
-asyncViewComponent.LoadingComponent = AsyncLoader;
-asyncViewComponent.ErrorComponent = AsyncError;
