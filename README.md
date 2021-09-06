@@ -21,14 +21,14 @@ yarn start
 // App.js
 export default function App() {
   return (
-  <StackBrowser>
+  <StackRouter>
     <StackSwitch unmountOnExit={false} duration={400} delay={100}>
       <StackRoute exact route="/" component={Home} />
       <StackRoute route="/subpage" component={Subpage} />
       <StackRoute exact route="/nextpage" component={Nextpage} unmountOnExit={true} />
       <StackRoute component={NotFound} unmountOnExit={true} />
     </StackSwitch>
-  </StackBrowser>
+  </StackRouter>
   );
 }
 ```
