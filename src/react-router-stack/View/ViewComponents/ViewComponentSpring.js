@@ -1,11 +1,11 @@
 import { forwardRef, Fragment, useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory, __RouterContext } from 'react-router';
 import { useSpring } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
 import { usePremount, useLink, usePreventBackward } from '../../hooks';
 import { ViewElementAnimation } from '../ViewElements/ViewElementAnimation';
 import { ViewGlobalStyle } from '../ViewElements/ViewGlobalStyle';
-import { __RouterContext } from 'react-router';
 
 let callbackCancel = null;
 let callbackRestore = null;
@@ -14,6 +14,7 @@ export const ViewComponentSpring = forwardRef(
   ({ duration: $duration, delay: $delay, viewType: $viewType, ...props }, ref) => {
     const { routerIndex } = useContext(__RouterContext);
     const link = useLink();
+    const history = useHistory();
     const [prevent] = usePreventBackward(false);
     const premount = usePremount();
     const [{ x }, set] = useSpring(() => ({ x: 0, y: 0 }));
@@ -69,7 +70,11 @@ export const ViewComponentSpring = forwardRef(
 
         if (!down && x > 0 && isPass) {
           if (prevent) x = 0;
-          link.goBackView();
+          if (prevent) {
+            history.goBack();
+          } else {
+            link.goBackView();
+          }
           callbackRestore = setTimeout(() => {
             set.start({ x: 0, immediate: true });
           }, timeout);
