@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router';
 import styled from 'styled-components';
 
-import { useActiveLocation } from '../../react-router-stack/hooks';
+import { useRouteLocation } from '../../react-router-stack/hooks';
 
 export const TestViewLayout = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ const HeaderComponent = styled.header`
 `;
 
 export const Header = (props: any) => {
-  const location = useActiveLocation();
+  const location = useRouteLocation();
   const routeMatch = useRouteMatch();
   const [top, setTop] = useState(document.documentElement.scrollTop);
 

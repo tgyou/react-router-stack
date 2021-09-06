@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react';
 import { useLocation, useRouteMatch } from 'react-router';
 
-export function useActiveLocation() {
+export function useRouteLocation() {
   const location = useLocation();
   const routeMatch = useRouteMatch();
   const refLocation = useRef(location);

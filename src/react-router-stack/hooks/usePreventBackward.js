@@ -2,14 +2,14 @@ import { useCallback, useContext, useEffect, useLayoutEffect, useMemo, useRef } 
 import { useHistory, __RouterContext } from 'react-router';
 import { BACKWARD, FORWARD } from '../constants';
 import { getLocationKeys } from '../StackSwitch/useLocationKey';
-import { useActiveLocation } from './useActiveLocation';
+import { useRouteLocation } from './useRouteLocation';
 
 function hasOwnProperty(object, key) {
   return Object.prototype.hasOwnProperty.call(object || {}, key);
 }
 
 function useKey() {
-  const location = useActiveLocation();
+  const location = useRouteLocation();
 
   return useMemo(() => {
     if (hasOwnProperty(location?.state, '__prevent')) {
@@ -34,7 +34,7 @@ function useHasNext(key) {
 }
 
 function useIsNext(key) {
-  const location = useActiveLocation();
+  const location = useRouteLocation();
 
   return useMemo(() => {
     return hasOwnProperty(location.state, '__prevent') && location.state.__prevent === key && !location.hash;
@@ -49,7 +49,7 @@ function useLocationState(key) {
 
 export function usePreventBackward(watchLocation = true) {
   const history = useHistory();
-  const location = useActiveLocation();
+  const location = useRouteLocation();
   const { locationHistory, match, routerIndex } = useContext(__RouterContext);
 
   const key = useKey();

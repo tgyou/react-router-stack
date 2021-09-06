@@ -174,14 +174,14 @@ import { link } from 'react-router-stack/hooks';
 const active = useActive();
 ```
 
-### useActiveLocation()
+### useRouteLocation()
 - Same as useLocation. However, it only returns the location of the active state.
 ```js
 import { link } from 'react-router-stack/hooks';
 
 ...
 
-const location = useActiveLocation();
+const location = useRouteLocation();
 ```
 ### useLink()
 ```js

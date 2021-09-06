@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 import { useLink } from '../hooks';
 
-import { useActiveLocation } from '../hooks/useActiveLocation';
+import { useRouteLocation } from '../hooks/useRouteLocation';
 
 export function Link(props) {
   const link = useLink();
-  const location = useActiveLocation();
+  const location = useRouteLocation();
 
   const handleClick = useCallback(
     event => {
