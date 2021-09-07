@@ -57,6 +57,7 @@ export function usePreventBackward(watchLocation = true) {
   const isNext = useIsNext(key);
   const locationState = useLocationState(key);
   const __lock = useRef(false);
+  const __wait = useRef(false);
   const refPrevent = useRef(locationState?.prevent);
 
   useEffect(() => {
@@ -74,9 +75,9 @@ export function usePreventBackward(watchLocation = true) {
 
       // prevent 가 promise 인 경우, 앞으로 보낸다음, 결과에 따라 동작
       if (result instanceof Promise) {
-        __lock.current = true;
+        __wait.current = true;
         history.goForward();
-        result.then(r => r && history.go(-2));
+        result.then(r => r && history.go(-2)).finally(() => (__wait.current = false));
       } else if (result) {
         history.goBack();
       } else {
@@ -96,7 +97,9 @@ export function usePreventBackward(watchLocation = true) {
       return;
     }
 
-    if (prevent && location.hash && !location.key) {
+    if (__wait.current && prevent && !isNext) {
+      history.goForward();
+    } else if (prevent && location.hash && !location.key) {
       __lock.current = true;
     } else if (match.active && !match.isExact && isNext && !prevent) {
       // return from subroute.
