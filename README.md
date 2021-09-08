@@ -7,12 +7,12 @@ for all web apps become like native apps...
 
 ## Install
 
-npm package... (soon)
+via npm package
 ```sh
 yarn add react-router-stack
 ```
 
-git source
+via git source
 ```sh
 git clone https://git...
 yarn
