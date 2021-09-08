@@ -24,7 +24,7 @@ export function useTransitionHandlers() {
   const history = useHistory();
 
   const onEnter = useCallback(
-    (node: any) => {
+    node => {
       if (active) node.removeAttribute('hidden');
       if (history.action === POP) {
         const state = locationHistory.get(routeMatch.key);
@@ -34,17 +34,17 @@ export function useTransitionHandlers() {
     [active, history, routeMatch.key, locationHistory]
   );
 
-  const onEntering = useCallback((node: any) => {}, []);
+  const onEntering = useCallback(node => {}, []);
 
   const onEntered = useCallback(
-    (node: any) => {
+    node => {
       if (active) node.removeAttribute('hidden');
     },
     [active]
   );
 
   const onExit = useCallback(
-    (node: any) => {
+    node => {
       if (isScrollable(node)) {
         locationHistory.set(routeMatch.key, {
           scrollTop: node.scrollTop,
@@ -55,10 +55,10 @@ export function useTransitionHandlers() {
     [routeMatch.key, locationHistory]
   );
 
-  const onExiting = useCallback((node: any) => {}, []);
+  const onExiting = useCallback(node => {}, []);
 
   const onExited = useCallback(
-    (node: any) => {
+    node => {
       if (!active) node.setAttribute('hidden', 'hidden');
     },
     [active]
