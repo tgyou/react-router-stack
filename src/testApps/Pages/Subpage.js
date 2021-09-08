@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useHistory, useRouteMatch } from 'react-router';
 
-import { Link } from '../../react-router-stack';
-import { View } from '../../react-router-stack/View';
-import { useActive, useLink, usePreventBackward } from '../../react-router-stack/hooks';
-import { BACKWARD } from '../../react-router-stack/constants';
+import { Link } from 'react-router-stack';
+import { View } from 'react-router-stack/View';
+import { useActive, useLink, usePreventBackward } from 'react-router-stack/hooks';
+import { BACKWARD } from 'react-router-stack/constants';
 
 import { HashData, PreventBackward } from '../Test/_Test.components';
 import { Header, Footer, Section } from './HeaderFooter';

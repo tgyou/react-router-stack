@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { useRouteMatch } from 'react-router-dom';
 import { __RouterContext } from 'react-router';
 
-import { Link } from '../../react-router-stack';
-import { useActive, useHashData, usePreventBackward } from '../../react-router-stack/hooks';
+import { Link } from 'react-router-stack';
+import { useActive, useHashData, usePreventBackward } from 'react-router-stack/hooks';
 
 import { getRandomFruit } from './_Test.utils';
 

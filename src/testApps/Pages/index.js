@@ -1,5 +1,5 @@
-import { StackRoute, StackRouter, StackSwitch } from '../../react-router-stack';
-import { ViewComponentSpring, viewConfig, asyncViewComponent } from '../../react-router-stack/View';
+import { StackRoute, StackRouter, StackSwitch } from 'react-router-stack';
+import { ViewComponentSpring, viewConfig, asyncViewComponent } from 'react-router-stack/View';
 
 import { AsyncError, AsyncLoader } from './AsyncUtils';
 

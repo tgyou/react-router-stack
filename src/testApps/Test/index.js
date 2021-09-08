@@ -1,6 +1,6 @@
 import { useRouteMatch } from 'react-router';
 
-import { Link, StackRoute, StackRouter, StackSwitch } from '../../react-router-stack';
+import { Link, StackRoute, StackRouter, StackSwitch } from 'react-router-stack';
 
 import { Meta } from './_Meta';
 import { FieldsetPage, Header, Links } from './_Test.components';

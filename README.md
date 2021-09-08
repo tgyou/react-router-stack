@@ -2,6 +2,9 @@
 
 for all web apps become like native apps... 
 
+## Demo
+[CodeSandBox](https://codesandbox.io/s/naughty-poitras-bh0gq])
+
 ## Install
 
 npm package... (soon)
@@ -131,7 +134,7 @@ import { Link } from 'react-router-stack';
 
 ### &lt;View&gt;
 ```js
-import { View } from 'react-router-stack/View';
+import { View } from 'react-router-stack';
 ```
 
 #### usage 
@@ -155,7 +158,7 @@ import { View } from 'react-router-stack/View';
 
 If you want to permanently change the component,
 ```jsx
-import { viewConfig, ViewComponentSpring } from 'react-router-stack/View';
+import { viewConfig, ViewComponentSpring } from 'react-router-stack';
 
 viewConfig.component = ViewComponentSpring;
 ```
@@ -163,13 +166,13 @@ viewConfig.component = ViewComponentSpring;
 
 ## Hooks
 ```js
-import { ... } from 'react-router-stack/hooks';
+import { ... } from 'react-router-stack';
 ```
 
 ### useActive()
 - Returns the activation state.
 ```js
-import { link } from 'react-router-stack/hooks';
+import { link } from 'react-router-stack';
 
 const active = useActive();
 ```
@@ -177,7 +180,7 @@ const active = useActive();
 ### useRouteLocation()
 - Same as useLocation. However, it only returns the location of the active state.
 ```js
-import { link } from 'react-router-stack/hooks';
+import { link } from 'react-router-stack';
 
 ...
 
@@ -185,7 +188,7 @@ const location = useRouteLocation();
 ```
 ### useLink()
 ```js
-import { link } from 'react-router-stack/hooks';
+import { link } from 'react-router-stack';
 
 ...
 
@@ -194,7 +197,7 @@ const link = useLink();
 
 - push(to, state, options)
 ```js
-import { link } from 'react-router-stack/hooks';
+import { link } from 'react-router-stack';
 
 ...
 
@@ -206,7 +209,7 @@ const handleLink = useCallback(() => {
 ```
 - replace(to, state, options)
 ```js
-import { link } from 'react-router-stack/hooks';
+import { link } from 'react-router-stack';
 
 ...
 
@@ -219,7 +222,7 @@ const handleReplaceLink = useCallback(() => {
 
 - goFirst(event or fallbackUrl, fallbackUrl)
 ```js
-import { link } from 'react-router-stack/hooks';
+import { link } from 'react-router-stack';
 
 ...
 
@@ -238,7 +241,7 @@ const handleGoFirst = useCallback((event) => {
 
 - goBackView()
 ```js
-import { link } from 'react-router-stack/hooks';
+import { link } from 'react-router-stack';
 
 ...
 
@@ -249,7 +252,7 @@ const handleGoBackView = useCallback((event) => {
 
 ### useHashData()
 ```js
-import { useHashData } from 'react-router-stack/hooks';
+import { useHashData } from 'react-router-stack';
 
 ...
 
@@ -264,7 +267,7 @@ useEffect(() => {
 
 #### Basic usage
 ```js
-import { usePreventBackward } from 'react-router-stack/hooks';
+import { usePreventBackward } from 'react-router-stack';
 
 ...
 
@@ -273,7 +276,7 @@ const [prevent, setPrevent] = usePreventBackward();
 
 #### without event listener
 ```js
-import { usePreventBackward } from 'react-router-stack/hooks';
+import { usePreventBackward } from 'react-router-stack';
 
 ...
 
@@ -281,7 +284,7 @@ const [prevent, setPrevent] = usePreventBackward(false);
 ```
 ### usePremount()
 ```js
-import { premount } from 'react-router-stack/hooks';
+import { premount } from 'react-router-stack';
 
 ...
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router';
 import styled from 'styled-components';
 
-import { useRouteLocation } from '../../react-router-stack/hooks';
+import { useRouteLocation } from 'react-router-stack/hooks';
 
 export const TestViewLayout = styled.div`
   display: flex;

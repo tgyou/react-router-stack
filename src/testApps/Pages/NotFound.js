@@ -1,7 +1,7 @@
 import { useRouteMatch } from 'react-router';
 
-import { View } from '../../react-router-stack/View';
-import { useLink } from '../../react-router-stack/hooks';
+import { View } from 'react-router-stack/View';
+import { useLink } from 'react-router-stack/hooks';
 
 import { Header, Section } from './HeaderFooter';
 

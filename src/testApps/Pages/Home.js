@@ -1,6 +1,6 @@
-import { Link } from '../../react-router-stack';
-import { View } from '../../react-router-stack/View';
-import { useLink, useRouteLocation } from '../../react-router-stack/hooks';
+import { Link } from 'react-router-stack';
+import { View } from 'react-router-stack/View';
+import { useLink, useRouteLocation } from 'react-router-stack/hooks';
 
 import { Header, Footer, Section } from './HeaderFooter';
 import LoremIprum from './LoremIpsum';

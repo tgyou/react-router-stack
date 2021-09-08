@@ -2,8 +2,8 @@ import { CSSTransition } from 'react-transition-group';
 import { useRouteMatch } from 'react-router';
 import styled from 'styled-components';
 
-import { Link, StackRoute, StackSwitch } from '../../react-router-stack';
-import { View, BTT } from '../../react-router-stack/View';
+import { Link, StackRoute, StackSwitch } from 'react-router-stack';
+import { View, BTT } from 'react-router-stack/View';
 
 import { Header, Section } from './HeaderFooter';
 
