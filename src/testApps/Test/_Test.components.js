@@ -62,26 +62,16 @@ export const PreventBackward = () => {
   const setFunction = useCallback(
     event => {
       setPrevent(() => {
-        return window
-          .Confirm(
-            <div>
-              Do you want to go back?
-              <br />
-              Press OK to unset the value.
-              <br />
-              {key}
-            </div>
-          )
-          .then(res => {
-            if (res) {
-              setPrevent(false);
-            }
+        if (window.confirm('Do you want to go back?')) {
+          setPrevent(false);
 
-            return res;
-          });
+          return true;
+        } else {
+          return false;
+        }
       });
     },
-    [key, setPrevent]
+    [setPrevent]
   );
 
   const setBoolean = useCallback(
