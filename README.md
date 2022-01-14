@@ -3,7 +3,7 @@
 for all web apps become like native apps... 
 
 ## Demo
-[CodeSandBox](https://codesandbox.io/s/naughty-poitras-bh0gq])
+[CodeSandBox](https://codesandbox.io/s/naughty-poitras-bh0gq)
 
 ## Install
 
